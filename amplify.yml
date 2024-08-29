@@ -1,16 +1,13 @@
 version: 1
 applications:
   - appRoot: .
-    frontend:
+    backend:
       phases:
         preBuild:
           commands:
             - npm install
-        build:
-          commands:
-            - npm run build
       artifacts:
-        baseDirectory: build  
+        baseDirectory: . # The directory where your server files are located
         files:
           - '**/*'
       cache:
