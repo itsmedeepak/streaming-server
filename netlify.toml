@@ -1,0 +1,5 @@
+[build]
+  publish = "build" # Directory where your static files are located
+
+[build.environment]
+  NODE_VERSION = "16" # Specify the Node.js version if needed

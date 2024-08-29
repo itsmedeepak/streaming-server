@@ -1,5 +1,5 @@
 import express from "express"
-import Authenticate from "../middleware.js";
+import Authenticate from "../authenticate.js";
 import { GetStream, GetStreamByID, saveStream } from "../controllers/streamControllers.js";
 const router = express.Router();
 
