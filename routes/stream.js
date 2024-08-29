@@ -4,6 +4,6 @@ import { GetStream, GetStreamByID, saveStream } from "../controllers/streamContr
 const router = express.Router();
 
 router.get('/',Authenticate,  GetStream);
-router.get('/:roomID',  GetStreamByID );
+router.post('/:roomID',  GetStreamByID);
 router.post('/', Authenticate, saveStream);
 export default router;
