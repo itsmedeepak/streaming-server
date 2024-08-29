@@ -1,15 +1,39 @@
 version: 1
 applications:
-  - appRoot: .
+  - appRoot: frontend
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - echo "frontend prebuild-1"
+        build:
+          commands:
+            - echo "frontend prebuild-2"
+        postBuild:
+          commands:
+            - echo "frontend test"
+      artifacts:
+        baseDirectory: build
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - nodes/**/*
+
+  - appRoot: backend
     backend:
       phases:
         preBuild:
           commands:
             - npm install
+        build:
+          commands:
+            - echo "backend prebuild1"
       artifacts:
-        baseDirectory: . # The directory where your server files are located
+        baseDirectory: build
         files:
           - '**/*'
       cache:
         paths:
           - node_modules/**/*
+
